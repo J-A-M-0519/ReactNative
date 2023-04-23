@@ -1,0 +1,83 @@
+import React from 'react';
+import {  StyleSheet, Button, View, SafeAreaView, Text, Alert, } from 'react-native';
+
+const Separator = () => <View style={styles.separator} />;
+
+const App = () => (
+  <SafeAreaView style={styles.container}>
+    <View>
+      <Text style={styles.title}>
+      I was able to get buttons working in my app!
+      </Text>
+      <Button
+        title="Matty look!"
+        color="indigo"
+        onPress={() => Alert.alert("It's working!")}
+      />
+    </View>
+    <Separator />
+    <View>
+      <Text style={styles.title}>
+    I made a working app!
+      </Text>
+      <Button
+        title="I have worked so hard for this!"
+        color="pink"
+        onPress={() => Alert.alert('This is so awesome!')}
+      />
+    </View>
+    <Separator />
+    <View>
+      <Text style={styles.title}>
+        I made it so this button would not work to demonstrate the knowledge.
+      </Text>
+      <Button
+        title="Press me"
+        disabled
+        onPress={() => Alert.alert('Should not work!')}
+      />
+    </View>
+    <Separator />
+    <View>
+      <Text style={styles.title}>
+        I changed the layout here to make it about the twins!
+      </Text>
+      <View style={styles.fixToText}>
+        <Button
+          title="Baby A"
+          color="lightgreen"
+          onPress={() => Alert.alert("I can't wait to be your dad!")}
+        />
+        <Button
+          title="Baby B"
+          color="lightblue"
+          onPress={() => Alert.alert("I can't wait to be your dad!")}
+        />
+      </View>
+    </View>
+  </SafeAreaView>
+);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor:'oldlace',
+    justifyContent: 'center',
+    marginHorizontal: 10,
+  },
+  title: {
+    textAlign: 'center',
+    marginVertical: 8,
+  },
+  fixToText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  separator: {
+    marginVertical: 8,
+    borderBottomColor: 'white',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+});
+
+export default App;
